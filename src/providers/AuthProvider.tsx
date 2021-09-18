@@ -1,11 +1,11 @@
 import React, { ReactNode, useEffect, useState, useContext } from 'react'
 import { auth } from '../config/firebase'
 import {
+  Auth,
   UserCredential,
   User,
-  sendPasswordResetEmail as resetPassword,
-  createUserWithEmailAndPassword as signUp,
-  signInWithEmailAndPassword as signIn,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from 'firebase/auth'
 
 export interface AuthProviderProps {
@@ -13,11 +13,10 @@ export interface AuthProviderProps {
 }
 
 export interface AuthContextModel {
+  auth: Auth
   user: User | null
   signIn: (email: string, password: string) => Promise<UserCredential>
-  resetPassword: (email: string) => Promise<void>
   signUp: (email: string, password: string) => Promise<UserCredential>
-  // signOut: () => void;
 }
 
 export const AuthContext = React.createContext<AuthContextModel>(
@@ -32,15 +31,11 @@ export const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
   const [user, setUser] = useState<User | null>(null)
 
   function signUp(email: string, password: string): Promise<UserCredential> {
-    return signUp(email.trim(), password)
+    return createUserWithEmailAndPassword(auth, email, password)
   }
 
   function signIn(email: string, password: string): Promise<UserCredential> {
-    return signIn(email.trim(), password)
-  }
-
-  function resetPassword(email: string): Promise<void> {
-    return resetPassword(email)
+    return signInWithEmailAndPassword(auth, email, password)
   }
   useEffect(() => {
     //function that firebase notifies you if a user is set
@@ -52,9 +47,9 @@ export const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
 
   const values = {
     signUp,
-    resetPassword,
     user,
     signIn,
+    auth,
   }
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
 }
