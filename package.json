@@ -37,7 +37,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "new": "plop",
+    "new:component": "plop component",
+    "new:hook": "plop hook"
   },
   "eslintConfig": {
     "extends": [
