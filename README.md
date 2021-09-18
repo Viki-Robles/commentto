@@ -17,12 +17,14 @@ npm run dev``
 Open http://localhost:3000 with your browser to see the result.
 
 # Tech stack
-- React
-- TypeScript
-- Firebase
-- Formik
-- React Router
-- Theme UI
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Firebase](https://firebase.google.com/) - for user authentication
+- [Formik](https://formik.org/) - form management
+- [Yup](https://github.com/jquense/yup) - form validation
+- [React Router](https://reactrouter.com/web/guides/quick-start)
+- [Theme UI](https://theme-ui.com/)
+Theme UI is a library for creating themeable user interfaces based on constraint-based design principles.
 
 ### Useful yarn commands
 
