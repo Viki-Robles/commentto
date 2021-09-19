@@ -7,6 +7,7 @@ import * as Yup from 'yup'
 import {
   DASHBOARD_PAGE_PATH,
   FORGOT_PASSWORD_PAGE_PATH,
+  SIGN_UP_PAGE_PATH,
 } from '../../config/paths'
 import { useAuth } from '../../providers/AuthProvider'
 import { FormGroup } from '../../components/FormGroup/FormGroup'
@@ -29,7 +30,7 @@ export const SignIn = (): JSX.Element => {
   const history = useHistory()
 
   return (
-    <BorderWrapper title="Log in">
+    <BorderWrapper title="Welcome back">
       <Formik
         initialValues={{
           email: '',
@@ -66,21 +67,21 @@ export const SignIn = (): JSX.Element => {
             </FormGroup>
             <Grid>
               <Button type="submit" sx={{ mt: 1, bg: '#3F88F5' }}>
-                Submit
+                Log in
               </Button>
-              {/* <Link to={FORGOT_PASSWORD_PAGE_PATH}>
+              <Link to={SIGN_UP_PAGE_PATH}>
                 <Text
                   as="div"
                   sx={{
-                    fontSize: 2,
+                    fontSize: 1,
                     color: '#3F88F5',
                     textDecoration: 'none',
                     textAlign: 'center',
                   }}
                 >
-                  Forgot password?
+                  Dont have an account? Please Sign up here.
                 </Text>
-              </Link> */}
+              </Link>
             </Grid>
             <br />
             {formError && <Alert variant="error">{formError}</Alert>}

@@ -1,14 +1,17 @@
+import { SubTitle } from 'chart.js'
 import React, { ReactNode } from 'react'
 import { ThemeUIStyleObject, Grid, Text } from 'theme-ui'
 
 export interface BorderWrapperProps {
   sx?: ThemeUIStyleObject
   title: string
+  subheader?: string
   children: ReactNode
 }
 export const BorderWrapper = ({
   sx,
   title,
+  subheader,
   children,
 }: BorderWrapperProps): JSX.Element => {
   return (
@@ -31,14 +34,22 @@ export const BorderWrapper = ({
     >
       <Text
         sx={{
-          fontSize: 4,
+          fontSize: 5,
           fontWeight: 'bold',
           color: '#4B4A4A',
-          mb: 4,
           mt: 4,
         }}
       >
         {title}
+      </Text>
+      <Text
+        sx={{
+          fontSize: 2,
+          color: '#4B4A4A',
+          mb: 4,
+        }}
+      >
+        {subheader}
       </Text>
       {children}
     </Grid>
