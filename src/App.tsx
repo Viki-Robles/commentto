@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import { AuthProvider } from './providers/AuthProvider'
 import {
-  BASE_URL_PATH,
+  HOME_PAGE_PATH,
   DASHBOARD_PAGE_PATH,
   SIGN_IN_PAGE_PATH,
   SIGN_UP_PAGE_PATH,
@@ -29,11 +29,11 @@ function App(): JSX.Element {
           <Router>
             <Logo />
             <Switch>
-              <Route path={SIGN_UP_PAGE_PATH} component={SignUp} />
-              <Route path={SIGN_IN_PAGE_PATH} component={SignIn} />
-              <Welcome />
+              <Route exact path={SIGN_UP_PAGE_PATH} component={SignUp} />
+              <Route exact path={SIGN_IN_PAGE_PATH} component={SignIn} />
+              <Route exact path={HOME_PAGE_PATH} component={Welcome} />
               <Layout>
-                <Route path={DASHBOARD_PAGE_PATH} component={Dashboard} />
+                <Route exact path={DASHBOARD_PAGE_PATH} component={Dashboard} />
               </Layout>
             </Switch>
             <Footer />
