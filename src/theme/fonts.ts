@@ -14,21 +14,21 @@ export const fonts = {
 
 // prettier-ignore
 export const fontSizes = [
-      '0.625rem',   // 0:  10px
-      '0.75rem',    // 1:  12px
-      '0.875rem',   // 2:  14px
-      '1rem',       // 3:  16px - body, h5, h4
-      '1.125rem',   // 4:  18px
-      '1.25rem',    // 5:  20px
-      '1.375rem',   // 6:  22px
-      '1.5625rem',  // 7:  25px - h3
-      '1.75rem',    // 8: 28px
-      '2rem',       // 9: 32px - h2
-      '2.25rem',    // 10: 36px
-      '2.625rem',   // 11: 42px - h1
-      '2.875rem',   // 12: 46px
-      '3.1875rem',  // 13: 51px
-    ]
+  '0.625rem',   // 0:  10px
+  '0.75rem',    // 1:  12px
+  '0.875rem',   // 2:  14px
+  '1rem',       // 3:  16px - body, h5, h4
+  '1.125rem',   // 4:  18px
+  '1.25rem',    // 5:  20px
+  '1.375rem',   // 6:  22px
+  '1.5625rem',  // 7:  25px - h3
+  '1.75rem',    // 8: 28px
+  '2rem',       // 9: 32px - h2
+  '2.25rem',    // 10: 36px
+  '2.625rem',   // 11: 42px - h1
+  '2.875rem',   // 12: 46px
+  '3.1875rem',  // 13: 51px
+]
 
 export const baseFontWeights = {
   hairline: 100,

@@ -23,7 +23,13 @@ export const FormGroup = ({
     <Box sx={{ mb: 4, ...sx }}>
       <Label
         htmlFor={name}
-        sx={{ mb: 1, alignItems: 'center', maxWidth: '200px' }}
+        sx={{
+          mb: 1,
+          alignItems: 'center',
+          maxWidth: '200px',
+          fontSize: 2,
+          color: '#4B4A4A',
+        }}
       >
         {label}
       </Label>

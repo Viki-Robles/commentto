@@ -1,14 +1,30 @@
-import React from 'react'
-import './App.css'
+import React, { Suspense } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { SignUp } from '../src/components/SignUp/SignUp'
+import { Dashboard } from './components/Dashboard/Dashboard'
 import { AuthProvider } from './providers/AuthProvider'
+import { Layout } from './components/Layout/Layout'
+import {
+  BASE_URL_PATH,
+  DASHBOARD_PAGE_PATH,
+  SIGN_UP_PAGE_PATH,
+} from './config/paths'
 
 function App(): JSX.Element {
   return (
     <div className="App">
-      <AuthProvider>
-        <SignUp />
-      </AuthProvider>
+      <Suspense fallback={'Loading'}>
+        <AuthProvider>
+          <Router>
+            <Switch>
+              <Route path={SIGN_UP_PAGE_PATH} component={SignUp} />
+              <Layout>
+                <Route path={DASHBOARD_PAGE_PATH} component={Dashboard} />
+              </Layout>
+            </Switch>
+          </Router>
+        </AuthProvider>
+      </Suspense>
     </div>
   )
 }
