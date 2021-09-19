@@ -11,7 +11,7 @@ export const CommentContainer = ({
 }: CommentContainerProps): JSX.Element => {
   return (
     <Box sx={{ ...sx }}>
-      <Text sx={{ fontWeight: '600', fontSize: 4 }}>What customers say</Text>
+      <Text sx={{ fontWeight: '600', fontSize: 4 }}>Customer Review:</Text>
       {commentsData.map(({ picture, name, comment, id }) => {
         return (
           <CommentItem

@@ -31,7 +31,7 @@ export const Dashboard = ({ onSubmit, sx }: DashboardProps): JSX.Element => {
   return (
     <BorderWrapper
       title="Review our Product"
-      sx={{ maxWidth: '700px', height: '1000px', mt: 5, ...sx }}
+      sx={{ maxWidth: '750px', height: '100%', mt: 5, ...sx }}
     >
       <Grid columns={[1, '1fr 300px']}>
         <Formik

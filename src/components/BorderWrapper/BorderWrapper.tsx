@@ -25,7 +25,7 @@ export const BorderWrapper = ({
         width: 'auto',
         margin: '0 auto',
         mt: 7,
-        pb: 4,
+        p: [2, 4],
         ...sx,
       }}
     >

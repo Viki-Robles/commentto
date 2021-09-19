@@ -10,8 +10,9 @@ export const Logo = ({ sx }: LogoProps): JSX.Element => {
       as="div"
       sx={{
         justifySelf: 'flex-start',
-        fontSize: 3,
+        fontSize: 4,
         fontWeight: 'bold',
+        fontFamily: 'Fleur De Leah, cursive',
         color: '#3F88F5',
         mt: 3,
         ml: 3,
