@@ -35,9 +35,9 @@ export const BorderWrapper = ({
         as="div"
         sx={{
           justifySelf: 'flex-start',
-          color: '#3F88F5',
           fontSize: 3,
           fontWeight: 'bold',
+          color: '#3F88F5',
           mt: 3,
           ml: 3,
         }}
@@ -46,11 +46,11 @@ export const BorderWrapper = ({
       </Text>
       <Text
         sx={{
+          fontSize: 4,
+          fontWeight: 'bold',
+          color: '#4B4A4A',
           mb: 4,
           mt: 4,
-          fontSize: 4,
-          color: '#4B4A4A',
-          fontWeight: 'bold',
         }}
       >
         {formHeading}

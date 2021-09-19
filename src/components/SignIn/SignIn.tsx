@@ -49,7 +49,7 @@ export const SignIn = (): JSX.Element => {
       >
         {({ getFieldProps, isValid }) => (
           <Form>
-            <FormGroup label="Email address" name="email">
+            <FormGroup label="You email address" name="email">
               <Input
                 sx={{ borderColor: 'rgb(209, 218, 230)' }}
                 {...getFieldProps('email')}
@@ -64,16 +64,17 @@ export const SignIn = (): JSX.Element => {
                 id="password"
               />
             </FormGroup>
-            <Grid sx={{ alignItems: 'center', justifyContent: 'center' }}>
+            <Grid>
               <Button type="submit" sx={{ mt: 1, bg: '#3F88F5' }}>
                 Submit
               </Button>
               <Link to={FORGOT_PASSWORD_PAGE_PATH}>
                 <Text
+                  as="div"
                   sx={{
                     color: '#3F88F5',
                     textDecoration: 'none',
-                    justifySelf: 'center',
+                    textAlign: 'center',
                   }}
                 >
                   Forgot password?
