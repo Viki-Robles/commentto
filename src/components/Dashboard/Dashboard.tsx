@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import { ThemeUIStyleObject, Input, Button, Box, Grid } from 'theme-ui'
 import { useAuth } from '../../providers/AuthProvider'
 import { BorderWrapper } from '../BorderWrapper/BorderWrapper'
@@ -7,6 +7,7 @@ import { Form, Formik, FormikHelpers } from 'formik'
 import { FormGroup } from '../FormGroup/FormGroup'
 import { CommentItem } from '../CommentItem/CommentItem'
 import { Chart } from '../Chart/Chart'
+import { StarRating } from '../StarRating/StarRating'
 
 export interface ReviewFormValues {
   email: string
@@ -30,7 +31,7 @@ export const Dashboard = ({ onSubmit, sx }: DashboardProps): JSX.Element => {
   return (
     <BorderWrapper
       title="Review our Product"
-      sx={{ maxWidth: '700px', height: '950px', mt: 5, ...sx }}
+      sx={{ maxWidth: '700px', height: '1000px', mt: 5, ...sx }}
     >
       <Grid columns={[1, '1fr 300px']}>
         <Formik
@@ -56,21 +57,24 @@ export const Dashboard = ({ onSubmit, sx }: DashboardProps): JSX.Element => {
             resetForm,
           }) => {
             return (
-              <Form>
-                <FormGroup label="Name" name="name">
-                  <Input {...getFieldProps('name')} id="name" />
-                </FormGroup>
-                <FormGroup label="Email" name="email">
-                  <Input {...getFieldProps('email')} id="email" />
-                </FormGroup>
-                <FormGroup label="Comment" name="comment">
-                  <Input {...getFieldProps('comment')} id="comment" />
-                </FormGroup>
-                <Box>
-                  {Object.values(values.email)}
-                  {Object.values(values.comment)}
-                </Box>
-              </Form>
+              <Fragment>
+                <Form>
+                  <StarRating />
+                  <FormGroup label="Name" name="name">
+                    <Input {...getFieldProps('name')} id="name" />
+                  </FormGroup>
+                  <FormGroup label="Email" name="email">
+                    <Input {...getFieldProps('email')} id="email" />
+                  </FormGroup>
+                  <FormGroup label="Comment" name="comment">
+                    <Input {...getFieldProps('comment')} id="comment" />
+                  </FormGroup>
+                  <Box>
+                    {Object.values(values.email)}
+                    {Object.values(values.comment)}
+                  </Box>
+                </Form>
+              </Fragment>
             )
           }}
         </Formik>

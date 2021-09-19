@@ -12,7 +12,7 @@ export const Chart = ({ sx }: ChartProps): JSX.Element => {
     labels: ['Happy', 'Not Happy'],
     datasets: [
       {
-        label: 'Customer reviews for Socks n.02',
+        label: 'Customer reviews for Socks',
         data: customerReviewsData?.map((item) => item.stars),
         backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)'],
       },
