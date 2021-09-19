@@ -13,6 +13,7 @@ import { SignIn } from './components/SignIn/SignIn'
 import { Logo } from './components/Logo/Logo'
 import { Layout } from './components/Layout/Layout'
 import { Footer } from './components/Footer/Footer'
+import { Welcome } from './components/Welcome/Welcome'
 
 function App(): JSX.Element {
   return (
@@ -26,6 +27,7 @@ function App(): JSX.Element {
               <Route path={SIGN_IN_PAGE_PATH} component={SignIn} />
               <Layout>
                 <Route path={DASHBOARD_PAGE_PATH} component={Dashboard} />
+                <Route path={BASE_URL_PATH} component={Welcome} />
               </Layout>
             </Switch>
             <Footer />

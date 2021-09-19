@@ -18,7 +18,7 @@ export const commentsDataModel: CommentsDataModel[] = [
     name: 'Leslie Vanni',
     comment: 'I really loved the product, I would buy it again.',
     picture:
-      'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/girl.jpeg?raw=true',
+      'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/girlThree.jpeg?raw=true',
   },
   {
     id: 3,
@@ -26,14 +26,14 @@ export const commentsDataModel: CommentsDataModel[] = [
     comment:
       'It changed my life! I dont think I could leave without these socks.',
     picture:
-      'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/girl.jpeg?raw=true',
+      'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/girlTwo.jpeg?raw=true',
   },
   {
     id: 4,
     name: 'Jorge Robles',
     comment: 'These socks have change the way I see the world!',
     picture:
-      'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/girl.jpeg?raw=true',
+      'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/man.jpeg?raw=true',
   },
 
   {

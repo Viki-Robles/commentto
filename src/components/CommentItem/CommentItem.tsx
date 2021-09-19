@@ -5,7 +5,7 @@ export interface CommentItemProps {
   sx?: ThemeUIStyleObject
   name: string
   comment: string
-  picture: string
+  picture?: string
 }
 export const CommentItem = ({
   name,
