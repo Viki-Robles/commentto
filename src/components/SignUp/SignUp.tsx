@@ -48,7 +48,7 @@ export const SignUp = ({ sx }: FinishSignupFormProps): JSX.Element => {
   const history = useHistory()
 
   return (
-    <BorderWrapper logo="Commento" formHeading="Create account">
+    <BorderWrapper title="Create account">
       <Formik
         initialValues={{
           email: '',
@@ -108,7 +108,9 @@ export const SignUp = ({ sx }: FinishSignupFormProps): JSX.Element => {
               </Button>
               <Link to={{ pathname: SIGN_IN_PAGE_PATH }}>
                 <Text
+                  as="div"
                   sx={{
+                    fontSize: 1,
                     color: '#3F88F5',
                   }}
                 >

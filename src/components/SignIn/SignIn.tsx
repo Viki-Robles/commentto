@@ -29,7 +29,7 @@ export const SignIn = (): JSX.Element => {
   const history = useHistory()
 
   return (
-    <BorderWrapper logo="Commento" formHeading="Log in">
+    <BorderWrapper title="Log in">
       <Formik
         initialValues={{
           email: '',
@@ -72,6 +72,7 @@ export const SignIn = (): JSX.Element => {
                 <Text
                   as="div"
                   sx={{
+                    fontSize: 2,
                     color: '#3F88F5',
                     textDecoration: 'none',
                     textAlign: 'center',

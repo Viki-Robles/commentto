@@ -3,14 +3,12 @@ import { ThemeUIStyleObject, Grid, Text } from 'theme-ui'
 
 export interface BorderWrapperProps {
   sx?: ThemeUIStyleObject
-  logo?: string
-  formHeading: string
+  title: string
   children: ReactNode
 }
 export const BorderWrapper = ({
   sx,
-  logo,
-  formHeading,
+  title,
   children,
 }: BorderWrapperProps): JSX.Element => {
   return (
@@ -40,7 +38,7 @@ export const BorderWrapper = ({
           mt: 4,
         }}
       >
-        {formHeading}
+        {title}
       </Text>
       {children}
     </Grid>
