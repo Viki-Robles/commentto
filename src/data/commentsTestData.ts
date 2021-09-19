@@ -5,7 +5,7 @@ export interface CommentsDataModel {
   picture: string
 }
 
-export const commentsDataModel: CommentsDataModel[] = [
+export const commentsData: CommentsDataModel[] = [
   {
     id: 1,
     name: 'Klairh Sabaziwth',
@@ -16,7 +16,7 @@ export const commentsDataModel: CommentsDataModel[] = [
   {
     id: 2,
     name: 'Leslie Vanni',
-    comment: 'I really loved the product, I would buy it again.',
+    comment: 'Do not buy these socks! Within an hour they were ripped off!',
     picture:
       'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/girlThree.jpeg?raw=true',
   },

@@ -27,7 +27,7 @@ function App(): JSX.Element {
               <Route path={SIGN_IN_PAGE_PATH} component={SignIn} />
               <Layout>
                 <Route path={DASHBOARD_PAGE_PATH} component={Dashboard} />
-                <Route path={BASE_URL_PATH} component={Welcome} />
+                {/* <Route path={BASE_URL_PATH} component={Welcome} /> */}
               </Layout>
             </Switch>
             <Footer />
