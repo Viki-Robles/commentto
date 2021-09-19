@@ -1,7 +1,5 @@
 import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { SignUp } from '../src/components/SignUp/SignUp'
-import { Dashboard } from './components/Dashboard/Dashboard'
 import { AuthProvider } from './providers/AuthProvider'
 import { Layout } from './components/Layout/Layout'
 import {
@@ -10,7 +8,10 @@ import {
   SIGN_IN_PAGE_PATH,
   SIGN_UP_PAGE_PATH,
 } from './config/paths'
+import { SignUp } from '../src/components/SignUp/SignUp'
+import { Dashboard } from './components/Dashboard/Dashboard'
 import { SignIn } from './components/SignIn/SignIn'
+import { Logo } from './components/Logo/Logo'
 
 function App(): JSX.Element {
   return (
@@ -18,6 +19,7 @@ function App(): JSX.Element {
       <Suspense fallback={'Loading'}>
         <AuthProvider>
           <Router>
+            <Logo />
             <Switch>
               <Route path={SIGN_UP_PAGE_PATH} component={SignUp} />
               <Route path={SIGN_IN_PAGE_PATH} component={SignIn} />

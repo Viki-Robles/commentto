@@ -3,7 +3,7 @@ import { ThemeUIStyleObject, Grid, Text } from 'theme-ui'
 
 export interface BorderWrapperProps {
   sx?: ThemeUIStyleObject
-  logo: string
+  logo?: string
   formHeading: string
   children: ReactNode
 }
@@ -31,19 +31,6 @@ export const BorderWrapper = ({
         ...sx,
       }}
     >
-      <Text
-        as="div"
-        sx={{
-          justifySelf: 'flex-start',
-          fontSize: 3,
-          fontWeight: 'bold',
-          color: '#3F88F5',
-          mt: 3,
-          ml: 3,
-        }}
-      >
-        {logo}
-      </Text>
       <Text
         sx={{
           fontSize: 4,
