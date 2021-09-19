@@ -22,6 +22,7 @@ Open http://localhost:3000 with your browser to see the result.
 - [Firebase](https://firebase.google.com/) - for user authentication
 - [Formik](https://formik.org/) - form management
 - [Yup](https://github.com/jquense/yup) - form validation
+- [Chart.js](https://www.chartjs.org/docs/latest/) - for chart illustartion
 - [React Router](https://reactrouter.com/web/guides/quick-start)
 - [Theme UI](https://theme-ui.com/)
 Theme UI is a library for creating themeable user interfaces based on constraint-based design principles.
