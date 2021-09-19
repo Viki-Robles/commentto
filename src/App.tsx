@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { AuthProvider } from './providers/AuthProvider'
-import { Layout } from './components/Layout/Layout'
 import {
   BASE_URL_PATH,
   DASHBOARD_PAGE_PATH,
@@ -12,6 +11,8 @@ import { SignUp } from '../src/components/SignUp/SignUp'
 import { Dashboard } from './components/Dashboard/Dashboard'
 import { SignIn } from './components/SignIn/SignIn'
 import { Logo } from './components/Logo/Logo'
+import { Layout } from './components/Layout/Layout'
+import { Footer } from './components/Footer/Footer'
 
 function App(): JSX.Element {
   return (
@@ -27,6 +28,7 @@ function App(): JSX.Element {
                 <Route path={DASHBOARD_PAGE_PATH} component={Dashboard} />
               </Layout>
             </Switch>
+            <Footer />
           </Router>
         </AuthProvider>
       </Suspense>
