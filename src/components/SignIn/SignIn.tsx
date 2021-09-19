@@ -68,7 +68,7 @@ export const SignIn = (): JSX.Element => {
               <Button type="submit" sx={{ mt: 1, bg: '#3F88F5' }}>
                 Submit
               </Button>
-              <Link to={FORGOT_PASSWORD_PAGE_PATH}>
+              {/* <Link to={FORGOT_PASSWORD_PAGE_PATH}>
                 <Text
                   as="div"
                   sx={{
@@ -80,7 +80,7 @@ export const SignIn = (): JSX.Element => {
                 >
                   Forgot password?
                 </Text>
-              </Link>
+              </Link> */}
             </Grid>
             <br />
             {formError && <Alert variant="error">{formError}</Alert>}

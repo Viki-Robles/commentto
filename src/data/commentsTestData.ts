@@ -18,7 +18,7 @@ export const commentsData: CommentsDataModel[] = [
     name: 'Leslie Vanni',
     comment: 'Do not buy these socks! Within an hour they were ripped off!',
     picture:
-      'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/girlThree.jpeg?raw=true',
+      'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/man.jpeg?raw=true',
   },
   {
     id: 3,

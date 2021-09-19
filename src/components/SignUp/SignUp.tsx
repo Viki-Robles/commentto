@@ -25,7 +25,7 @@ interface FinishSignupFormValues {
   repeatPassword: string
 }
 
-const FinishSignupSchema = Yup.object().shape({
+const SignUpSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
   password: passwordValidation,
   repeatPassword: Yup.string().when('password', {
@@ -71,7 +71,7 @@ export const SignUp = ({ sx }: FinishSignupFormProps): JSX.Element => {
             setFormSubmitting(false)
           }
         }}
-        validationSchema={FinishSignupSchema}
+        validationSchema={SignUpSchema}
       >
         {({ getFieldProps }) => (
           <Form>
