@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeUIStyleObject, Grid, Box, Flex, Text } from 'theme-ui'
+import { ThemeUIStyleObject, Grid, Box, Flex, Text, Image } from 'theme-ui'
 
 export interface CommentItemProps {
   sx?: ThemeUIStyleObject
@@ -27,8 +27,11 @@ export const CommentItem = ({
       }}
     >
       <Flex sx={{ mb: 1 }}>
-        <Box sx={{ mr: 2 }}>{picture}Picture</Box>
-        <Text sx={{ fontWeight: 'bold' }}>{name}</Text>
+        <Image
+          src={picture}
+          sx={{ mr: 2, width: '30px', height: '30px', borderRadius: 8 }}
+        />
+        <Text sx={{ fontWeight: 'bold', alignSelf: 'center' }}>{name}</Text>
       </Flex>
       <Text sx={{ fontSize: 2 }}>{comment}</Text>
     </Box>
