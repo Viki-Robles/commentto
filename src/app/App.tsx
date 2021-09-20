@@ -35,10 +35,10 @@ function App(): JSX.Element {
               <Route exact path={SIGN_UP_PAGE_PATH} component={SignUp} />
               <Route exact path={SIGN_IN_PAGE_PATH} component={SignIn} />
               <Route exact path={HOME_PAGE_PATH} component={SignIn} />
-              <Route exact path="*" component={NotFound} />
               <Layout>
                 <Route exact path={DASHBOARD_PAGE_PATH} component={Dashboard} />
               </Layout>
+              <Route exact path="*" component={NotFound} />
             </Switch>
             <Footer />
           </Router>
