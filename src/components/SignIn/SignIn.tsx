@@ -72,12 +72,13 @@ export const SignIn = (): JSX.Element => {
               </Button>
               <Link to={SIGN_UP_PAGE_PATH}>
                 <Text
-                  as="div"
                   sx={{
                     fontSize: 1,
                     color: '#3F88F5',
-                    textDecoration: 'none',
                     textAlign: 'center',
+                    display: 'inline-block',
+                    textDecoration: 'none',
+                    margin: '0 auto',
                   }}
                 >
                   Dont have an account? Please Sign up here.

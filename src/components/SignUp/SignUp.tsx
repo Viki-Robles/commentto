@@ -101,10 +101,11 @@ export const SignUp = ({ sx }: FinishSignupFormProps): JSX.Element => {
               </Button>
               <Link to={{ pathname: SIGN_IN_PAGE_PATH }}>
                 <Text
-                  as="div"
                   sx={{
                     fontSize: 1,
                     color: '#3F88F5',
+                    display: 'inline-block',
+                    textDecoration: 'none',
                   }}
                 >
                   Do you already have an account? Please login in here.
