@@ -12,6 +12,7 @@ import {
 import { useAuth } from '../../providers/AuthProvider'
 import { FormGroup } from '../../components/FormGroup/FormGroup'
 import { BorderWrapper } from '../BorderWrapper/BorderWrapper'
+import icon from '../../media/images/unlocked.svg'
 
 interface LoginFormValues {
   email: string
@@ -30,7 +31,7 @@ export const SignIn = (): JSX.Element => {
   const history = useHistory()
 
   return (
-    <BorderWrapper title="Welcome back">
+    <BorderWrapper title="Welcome back" icon={icon}>
       <Formik
         initialValues={{
           email: '',

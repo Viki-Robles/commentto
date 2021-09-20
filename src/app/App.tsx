@@ -5,21 +5,23 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom'
-import { AuthProvider } from './providers/AuthProvider'
+import { AuthProvider } from '../providers/AuthProvider'
+import { ThemeProvider } from 'theme-ui'
 import {
   HOME_PAGE_PATH,
   DASHBOARD_PAGE_PATH,
   SIGN_IN_PAGE_PATH,
   SIGN_UP_PAGE_PATH,
   WELCOME_PAGE_PATH,
-} from './config/paths'
-import { SignUp } from '../src/components/SignUp/SignUp'
-import { Dashboard } from './components/Dashboard/Dashboard'
-import { SignIn } from './components/SignIn/SignIn'
-import { Logo } from './components/Logo/Logo'
-import { Layout } from './components/Layout/Layout'
-import { Footer } from './components/Footer/Footer'
-import { Welcome } from './components/Welcome/Welcome'
+} from '../config/paths'
+import { SignUp } from '../components/SignUp/SignUp'
+import { Dashboard } from '../components/Dashboard/Dashboard'
+import { SignIn } from '../components/SignIn/SignIn'
+import { Logo } from '../components/Logo/Logo'
+import { Layout } from '../components/Layout/Layout'
+import { Footer } from '../components/Footer/Footer'
+import { Welcome } from '../components/Welcome/Welcome'
+import theme from '../../theme'
 
 function App(): JSX.Element {
   return (

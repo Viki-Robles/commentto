@@ -6,7 +6,7 @@ import {
   Grid,
   Button,
   Text,
-  Heading,
+  Image,
 } from 'theme-ui'
 import { Form, Formik } from 'formik'
 import * as Yup from 'yup'
@@ -18,6 +18,7 @@ import { useAuth } from '../../providers/AuthProvider'
 import { passwordValidation } from '../../utils/passwordValidation'
 import { BorderWrapper } from '../BorderWrapper/BorderWrapper'
 import { Link } from 'react-router-dom'
+import icon from '../../media/images/lock.svg'
 
 interface FinishSignupFormValues {
   email: string
@@ -48,7 +49,7 @@ export const SignUp = ({ sx }: FinishSignupFormProps): JSX.Element => {
   const history = useHistory()
 
   return (
-    <BorderWrapper title="Create account">
+    <BorderWrapper title="Create account" icon={icon}>
       <Formik
         initialValues={{
           email: '',

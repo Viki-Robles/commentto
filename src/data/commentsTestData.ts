@@ -9,7 +9,7 @@ export const commentsData: CommentsDataModel[] = [
   {
     id: 1,
     name: 'Klairh Sabaziwth',
-    comment: 'Best socks ever! Unique Halloween experience!',
+    comment: 'Best socks ever! Super warmth and cozy.',
     picture:
       'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/girl.jpeg?raw=true',
   },
@@ -23,15 +23,14 @@ export const commentsData: CommentsDataModel[] = [
   {
     id: 3,
     name: 'Margs Stones',
-    comment:
-      'It changed my life! I dont think I could leave without these socks.',
+    comment: 'I would definetly recommend them for a git.',
     picture:
       'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/girlTwo.jpeg?raw=true',
   },
   {
     id: 4,
     name: 'Jorge Robles',
-    comment: 'These socks have change the way I see the world!',
+    comment: 'They are great! My girlfriend loved them.',
     picture:
       'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/man.jpeg?raw=true',
   },
@@ -39,7 +38,7 @@ export const commentsData: CommentsDataModel[] = [
   {
     id: 5,
     name: 'Andreia Betenkourt',
-    comment: 'The product is amazing I never had issues with it',
+    comment: 'The are so cute!!',
     picture:
       'https://github.com/Viki-Robles/commentto/blob/master/src/media/images/girl.jpeg?raw=true',
   },
