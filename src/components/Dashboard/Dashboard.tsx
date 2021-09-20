@@ -123,7 +123,7 @@ export const Dashboard = ({ onSubmit, sx }: DashboardProps): JSX.Element => {
           }}
         </Formik>
       </Grid>
-      <Grid columns={[1, '300px 1fr']}>
+      <Grid columns={[1, '300px 1fr']} gap={6}>
         <Chart />
         <CommentContainer />
       </Grid>
