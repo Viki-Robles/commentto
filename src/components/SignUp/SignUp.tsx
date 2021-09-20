@@ -1,13 +1,5 @@
 import React, { useState } from 'react'
-import {
-  Input,
-  Alert,
-  ThemeUIStyleObject,
-  Grid,
-  Button,
-  Text,
-  Image,
-} from 'theme-ui'
+import { Input, Alert, ThemeUIStyleObject, Grid, Button, Text } from 'theme-ui'
 import { Form, Formik } from 'formik'
 import * as Yup from 'yup'
 import { useHistory } from 'react-router-dom'
