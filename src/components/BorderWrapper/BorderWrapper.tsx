@@ -25,7 +25,8 @@ export const BorderWrapper = ({
         borderRadius: 8,
         borderColor: 'rgb(240, 243, 247)',
         backgroundColor: '#ffff',
-        boxShadow: 'rgb(0 0 0 / 5%) 0px 1px 2px 0px',
+        boxShadow:
+          '0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04)',
         maxWidth: '500px',
         width: 'auto',
         margin: '0 auto',

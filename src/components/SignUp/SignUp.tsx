@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
-import { Input, Alert, ThemeUIStyleObject, Grid, Button, Text } from 'theme-ui'
-import { ErrorMessage, Form, Formik } from 'formik'
+import {
+  Input,
+  ThemeUIStyleObject,
+  Grid,
+  Button,
+  Text,
+  Container,
+} from 'theme-ui'
+import { Form, Formik } from 'formik'
 import * as Yup from 'yup'
 import { useHistory } from 'react-router-dom'
 import { FormGroup } from '../../components/FormGroup/FormGroup'
-import { FormActions } from '../../components/FormActions/FormActions'
 import { DASHBOARD_PAGE_PATH, SIGN_IN_PAGE_PATH } from '../../config/paths'
 import { useAuth } from '../../providers/AuthProvider'
 import { passwordValidation } from '../../utils/passwordValidation'
@@ -35,86 +41,90 @@ export interface FinishSignupFormProps {
 }
 
 export const SignUp = ({ sx }: FinishSignupFormProps): JSX.Element => {
-  const { signUp, auth } = useAuth()
+  const { signUp } = useAuth()
   const [formError, setFormError] = useState<string>('')
   const [formSubmitting, setFormSubmitting] = useState<boolean>(false)
   const history = useHistory()
 
   return (
-    <BorderWrapper title="Create account" icon={icon}>
-      <Formik
-        initialValues={{
-          email: '',
-          password: '',
-          repeatPassword: '',
-        }}
-        onSubmit={async (values: FinishSignupFormValues) => {
-          setFormSubmitting(true)
-          try {
-            const result = await signUp(values.email, values.password)
+    <Container sx={{ ...sx }}>
+      <BorderWrapper title="Create account" icon={icon}>
+        <Formik
+          initialValues={{
+            email: '',
+            password: '',
+            repeatPassword: '',
+          }}
+          onSubmit={async (values: FinishSignupFormValues) => {
+            setFormSubmitting(true)
             try {
-              history.push(DASHBOARD_PAGE_PATH)
+              const result = await signUp(values.email, values.password)
+              try {
+                history.push(DASHBOARD_PAGE_PATH)
+              } catch (error) {
+                console.log(`🚀 ~ signup error`, error)
+              }
             } catch (error) {
-              console.log(`🚀 ~ signup error`, error)
+              console.log(error)
+              setFormError(formError)
+              setFormSubmitting(false)
             }
-          } catch (error) {
-            console.log(error)
-            setFormError(formError)
-            setFormSubmitting(false)
-          }
-        }}
-        validationSchema={SignUpSchema}
-      >
-        {({ getFieldProps }) => (
-          <Form>
-            <FormGroup label="Email address" name="email">
-              <Input
-                sx={{ borderColor: 'rgb(209, 218, 230)' }}
-                {...getFieldProps('email')}
-                id="email"
-              />
-            </FormGroup>
-            <FormGroup label="Password" name="password">
-              <Input
-                sx={{
-                  borderColor: 'rgb(209, 218, 230)',
-                }}
-                {...getFieldProps('password')}
-                type="password"
-                id="password"
-              />
-            </FormGroup>
-            <FormGroup label="Repeat password" name="repeatPassword">
-              <Input
-                sx={{
-                  borderColor: 'rgb(209, 218, 230)',
-                }}
-                {...getFieldProps('repeatPassword')}
-                type="password"
-                id="repeatPassword"
-              />
-            </FormGroup>
-            <Grid>
-              <Button type="submit" sx={{ mt: 1, bg: '#3F88F5' }}>
-                Sign up
-              </Button>
-              <Link to={{ pathname: SIGN_IN_PAGE_PATH }}>
-                <Text
+          }}
+          validationSchema={SignUpSchema}
+        >
+          {({ getFieldProps }) => (
+            <Form>
+              <FormGroup label="Email address" name="email">
+                <Input
+                  sx={{ borderColor: 'rgb(209, 218, 230)' }}
+                  {...getFieldProps('email')}
+                  id="email"
+                />
+              </FormGroup>
+              <FormGroup label="Password" name="password">
+                <Input
                   sx={{
-                    display: 'inline-block',
-                    textDecoration: 'none',
-                    fontSize: 1,
-                    color: '#3F88F5',
+                    borderColor: 'rgb(209, 218, 230)',
                   }}
-                >
-                  Do you already have an account? Please login in here.
-                </Text>
-              </Link>
-            </Grid>
-            {formError && <ErrorMessageWrapper message={formError} />}
-          </Form>
-        )}
-      </Formik>
-    </BorderWrapper>
+                  {...getFieldProps('password')}
+                  type="password"
+                  id="password"
+                />
+              </FormGroup>
+              <FormGroup label="Repeat password" name="repeatPassword">
+                <Input
+                  sx={{
+                    borderColor: 'rgb(209, 218, 230)',
+                  }}
+                  {...getFieldProps('repeatPassword')}
+                  type="password"
+                  id="repeatPassword"
+                />
+              </FormGroup>
+              <Grid>
+                <Button type="submit" sx={{ mt: 1, bg: '#3F88F5' }}>
+                  Sign up
+                </Button>
+                <Link to={{ pathname: SIGN_IN_PAGE_PATH }}>
+                  <Text
+                    sx={{
+                      display: 'inline-block',
+                      textDecoration: 'none',
+                      textAlign: 'center',
+                      margin: '0 auto',
+                      fontSize: 1,
+                      color: '#3F88F5',
+                    }}
+                  >
+                    Do you already have an account? Please login in here.
+                  </Text>
+                </Link>
+              </Grid>
+              {formError && <ErrorMessageWrapper message={formError} />}
+            </Form>
+          )}
+        </Formik>
+      </BorderWrapper>
+    </Container>
   )
 }

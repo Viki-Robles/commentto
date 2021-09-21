@@ -5,16 +5,13 @@ import {
   Button,
   Box,
   Grid,
-  Card,
   Text,
   Image,
 } from 'theme-ui'
-import { useAuth } from '../../providers/AuthProvider'
 import { BorderWrapper } from '../BorderWrapper/BorderWrapper'
 import { CommentContainer } from '../CommentContainer/CommentContainer'
 import { Form, Formik, FormikHelpers } from 'formik'
 import { FormGroup } from '../FormGroup/FormGroup'
-import { CommentItem } from '../CommentItem/CommentItem'
 import { Chart } from '../Chart/Chart'
 import { StarRating } from '../StarRating/StarRating'
 import productPicture from '../../media/images/product.jpeg'
@@ -36,7 +33,7 @@ const INITIAL_REVIEW_VALUES: ReviewFormValues = {
   name: '',
 }
 
-export const Dashboard = ({ onSubmit, sx }: DashboardProps): JSX.Element => {
+export const Dashboard = ({ sx }: DashboardProps): JSX.Element => {
   const [reviewSubmitting, setReviewSubmitting] = useState<boolean>(false)
   const [visible, setVisible] = useState<boolean>(false)
 

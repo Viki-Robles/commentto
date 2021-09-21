@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeUIStyleObject, Box, Text } from 'theme-ui'
+import { ThemeUIStyleObject, Text } from 'theme-ui'
 
 export interface ErrorMessageWrapperProps {
   sx?: ThemeUIStyleObject
@@ -13,11 +13,11 @@ export const ErrorMessageWrapper = ({
   return (
     <Text
       sx={{
-        ...sx,
         backgroundColor: '#fb6161',
         color: '#ffff',
         p: 2,
         borderRadius: 2,
+        ...sx,
       }}
     >
       {message}

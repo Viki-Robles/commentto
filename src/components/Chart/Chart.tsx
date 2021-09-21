@@ -20,7 +20,7 @@ export const Chart = ({ sx }: ChartProps): JSX.Element => {
   })
 
   return (
-    <Box>
+    <Box sx={{ ...sx }}>
       <Bar
         data={chartData}
         width={100}

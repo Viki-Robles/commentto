@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeUIStyleObject, Grid, Box, Flex, Text, Image } from 'theme-ui'
+import { ThemeUIStyleObject, Box, Flex, Text, Image } from 'theme-ui'
 
 export interface CommentItemProps {
   sx?: ThemeUIStyleObject
