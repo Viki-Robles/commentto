@@ -99,27 +99,6 @@ export const Dashboard = ({ onSubmit, sx }: DashboardProps): JSX.Element => {
                     >
                       Sumbit Review
                     </Button>
-                    {visible &&
-                      values.name.length > 0 &&
-                      values.email.length > 0 &&
-                      values.comment.length > 0 && (
-                        <Grid
-                          sx={{
-                            border: '1px solid',
-                            borderRadius: 8,
-                            borderColor: 'rgb(240, 243, 247)',
-                            backgroundColor: '#ffff',
-                            boxShadow: 'rgb(0 0 0 / 5%) 0px 1px 2px 0px',
-                            p: 2,
-                            mt: 4,
-                            ...sx,
-                          }}
-                        >
-                          <Text as="div">{Object.values(values.name)}</Text>
-                          <Text as="div">{Object.values(values.email)}</Text>
-                          <Text as="div">{Object.values(values.comment)}</Text>
-                        </Grid>
-                      )}
                   </Form>
                 </Box>
               </Fragment>
