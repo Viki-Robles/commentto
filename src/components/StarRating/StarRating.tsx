@@ -1,5 +1,5 @@
-import React from 'react'
-import { ThemeUIStyleObject, Box, Label, Radio } from 'theme-ui'
+import React, { useState, useRef } from 'react'
+import { ThemeUIStyleObject, Box } from 'theme-ui'
 import { FaStar } from 'react-icons/fa'
 
 export interface StarRatingProps {
@@ -7,16 +7,26 @@ export interface StarRatingProps {
 }
 
 export const StarRating = ({ ...sx }: StarRatingProps): JSX.Element => {
+  const [currentValue, setCurrentValue] = useState<number>(0)
   const stars = Array(5).fill(0)
+
+  const handleClick = (value: any) => {
+    setCurrentValue(value)
+  }
 
   return (
     <Box sx={{ ...sx }}>
-      <Label>
-        <input type="radio" name="rating" />
-        {stars.map((_, index) => {
-          return <FaStar size={30} key={index} />
-        })}
-      </Label>
+      {stars.map((_, index) => {
+        return (
+          <FaStar
+            size={40}
+            style={{ marginRight: 10 }}
+            key={index}
+            color={currentValue > index ? '#FFCD58' : '#a9a9a9'}
+            onClick={() => handleClick(index + 1)}
+          />
+        )
+      })}
     </Box>
   )
 }
