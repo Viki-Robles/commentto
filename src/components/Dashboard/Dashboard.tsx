@@ -43,9 +43,9 @@ export const Dashboard = ({ onSubmit, sx }: DashboardProps): JSX.Element => {
   return (
     <BorderWrapper
       title="Product Review"
-      sx={{ maxWidth: '50vw', height: '100%', mt: 5, ...sx }}
+      sx={{ width: 'auto', maxWidth: '60vw', mt: 5, ...sx }}
     >
-      <Grid columns={[1, '1fr 300px']} sx={{ mb: 4 }}>
+      <Grid columns={[1, null, null, '1fr 1fr']}>
         <Formik
           validateOnChange={false}
           enableReinitialize
@@ -55,10 +55,11 @@ export const Dashboard = ({ onSubmit, sx }: DashboardProps): JSX.Element => {
             actions: FormikHelpers<ReviewFormValues>,
           ) => {
             setReviewSubmitting(true)
+            actions.resetForm()
+            console.table(values)
           }}
         >
-          {({ handleChange, values, getFieldProps, handleSubmit }) => {
-            console.log('values', INITIAL_REVIEW_VALUES)
+          {({ values, getFieldProps, handleSubmit }) => {
             return (
               <Fragment>
                 <Box>
@@ -98,24 +99,27 @@ export const Dashboard = ({ onSubmit, sx }: DashboardProps): JSX.Element => {
                     >
                       Sumbit Review
                     </Button>
-                    {visible && (
-                      <Grid
-                        sx={{
-                          border: '1px solid',
-                          borderRadius: 8,
-                          borderColor: 'rgb(240, 243, 247)',
-                          backgroundColor: '#ffff',
-                          boxShadow: 'rgb(0 0 0 / 5%) 0px 1px 2px 0px',
-                          p: 2,
-                          mt: 4,
-                          ...sx,
-                        }}
-                      >
-                        <Text as="div">{Object.values(values.name)}</Text>
-                        <Text as="div">{Object.values(values.email)}</Text>
-                        <Text as="div"> {Object.values(values.comment)}</Text>
-                      </Grid>
-                    )}
+                    {visible &&
+                      values.name.length > 0 &&
+                      values.email.length > 0 &&
+                      values.comment.length > 0 && (
+                        <Grid
+                          sx={{
+                            border: '1px solid',
+                            borderRadius: 8,
+                            borderColor: 'rgb(240, 243, 247)',
+                            backgroundColor: '#ffff',
+                            boxShadow: 'rgb(0 0 0 / 5%) 0px 1px 2px 0px',
+                            p: 2,
+                            mt: 4,
+                            ...sx,
+                          }}
+                        >
+                          <Text as="div">{Object.values(values.name)}</Text>
+                          <Text as="div">{Object.values(values.email)}</Text>
+                          <Text as="div">{Object.values(values.comment)}</Text>
+                        </Grid>
+                      )}
                   </Form>
                 </Box>
               </Fragment>
@@ -123,7 +127,7 @@ export const Dashboard = ({ onSubmit, sx }: DashboardProps): JSX.Element => {
           }}
         </Formik>
       </Grid>
-      <Grid columns={[1, '300px 1fr']} gap={6}>
+      <Grid columns={[1, null, null, '1fr 1fr']}>
         <Chart />
         <CommentContainer />
       </Grid>

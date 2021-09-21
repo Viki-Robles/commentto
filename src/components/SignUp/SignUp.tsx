@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Input, Alert, ThemeUIStyleObject, Grid, Button, Text } from 'theme-ui'
-import { Form, Formik } from 'formik'
+import { ErrorMessage, Form, Formik } from 'formik'
 import * as Yup from 'yup'
 import { useHistory } from 'react-router-dom'
 import { FormGroup } from '../../components/FormGroup/FormGroup'
@@ -11,6 +11,7 @@ import { passwordValidation } from '../../utils/passwordValidation'
 import { BorderWrapper } from '../BorderWrapper/BorderWrapper'
 import { Link } from 'react-router-dom'
 import icon from '../../media/images/lock.svg'
+import { ErrorMessageWrapper } from '../ErrorMessageWrapper/ErrorMessageWrapper'
 
 interface FinishSignupFormValues {
   email: string
@@ -31,7 +32,6 @@ const SignUpSchema = Yup.object().shape({
 
 export interface FinishSignupFormProps {
   sx?: ThemeUIStyleObject
-  // children: ReactNode
 }
 
 export const SignUp = ({ sx }: FinishSignupFormProps): JSX.Element => {
@@ -50,7 +50,6 @@ export const SignUp = ({ sx }: FinishSignupFormProps): JSX.Element => {
         }}
         onSubmit={async (values: FinishSignupFormValues) => {
           setFormSubmitting(true)
-
           try {
             const result = await signUp(values.email, values.password)
             try {
@@ -102,19 +101,17 @@ export const SignUp = ({ sx }: FinishSignupFormProps): JSX.Element => {
               <Link to={{ pathname: SIGN_IN_PAGE_PATH }}>
                 <Text
                   sx={{
-                    fontSize: 1,
-                    color: '#3F88F5',
                     display: 'inline-block',
                     textDecoration: 'none',
+                    fontSize: 1,
+                    color: '#3F88F5',
                   }}
                 >
                   Do you already have an account? Please login in here.
                 </Text>
               </Link>
             </Grid>
-            {formError && (
-              <Alert variant="theme.alerts.error">{formError}</Alert>
-            )}
+            {formError && <ErrorMessageWrapper message={formError} />}
           </Form>
         )}
       </Formik>

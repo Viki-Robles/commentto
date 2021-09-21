@@ -14,6 +14,7 @@ import {
   WELCOME_PAGE_PATH,
   HOME_PAGE_PATH,
 } from '../config/paths'
+import { QueryClientProvider } from 'react-query'
 import { SignUp } from '../components/SignUp/SignUp'
 import { Dashboard } from '../components/Dashboard/Dashboard'
 import { SignIn } from '../components/SignIn/SignIn'

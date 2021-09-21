@@ -13,6 +13,7 @@ import { useAuth } from '../../providers/AuthProvider'
 import { FormGroup } from '../../components/FormGroup/FormGroup'
 import { BorderWrapper } from '../BorderWrapper/BorderWrapper'
 import icon from '../../media/images/unlocked.svg'
+import { ErrorMessageWrapper } from '../ErrorMessageWrapper/ErrorMessageWrapper'
 
 interface LoginFormValues {
   email: string
@@ -73,11 +74,11 @@ export const SignIn = (): JSX.Element => {
               <Link to={SIGN_UP_PAGE_PATH}>
                 <Text
                   sx={{
-                    fontSize: 1,
-                    color: '#3F88F5',
                     textAlign: 'center',
                     display: 'inline-block',
                     textDecoration: 'none',
+                    fontSize: 1,
+                    color: '#3F88F5',
                     margin: '0 auto',
                   }}
                 >
@@ -86,7 +87,11 @@ export const SignIn = (): JSX.Element => {
               </Link>
             </Grid>
             <br />
-            {formError && <Alert variant="error">{formError}</Alert>}
+            {formError && (
+              <Alert>
+                <ErrorMessageWrapper message={formError} />
+              </Alert>
+            )}
           </Form>
         )}
       </Formik>
