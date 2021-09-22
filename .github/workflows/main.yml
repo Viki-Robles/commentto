@@ -31,8 +31,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@master
-      - name: Download artifact
-        uses: actions/download-artifact@master
+      - name: Upload artifact
+        uses: actions/upload-artifact@master
         with:
           name: dist
           path: dist
