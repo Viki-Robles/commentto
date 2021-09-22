@@ -34,12 +34,6 @@ const sharedLargeButtonStyles = {
   pt: '0.6em',
   pb: '0.7em',
 }
-const sharedSmallButtonStyles = {
-  px: '1.3em',
-  pt: '0.4em',
-  pb: '0.5em',
-  fontSize: 2,
-}
 
 export const buttons: Theme['buttons'] = {
   primary: {
