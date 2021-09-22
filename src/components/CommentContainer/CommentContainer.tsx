@@ -12,7 +12,7 @@ export const CommentContainer = ({
   return (
     <Box sx={{ ...sx }}>
       <Text sx={{ fontWeight: '600', fontSize: 3, ml: 2 }}>
-        Customer Review:
+        CUSTOMER REVIEWS
       </Text>{' '}
       {commentsData.map(({ picture, name, comment, id }) => {
         return (

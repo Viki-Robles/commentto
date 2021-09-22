@@ -14,7 +14,7 @@ export const Chart = ({ sx }: ChartProps): JSX.Element => {
       {
         label: 'Customer Experience',
         data: customerReviewsData?.map((item) => item.stars),
-        backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)'],
+        backgroundColor: ['#FFA384', '#EFE7BC'],
       },
     ],
   })

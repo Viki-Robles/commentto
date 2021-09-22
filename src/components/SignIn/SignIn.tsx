@@ -2,14 +2,13 @@ import React, { useState } from 'react'
 import { Alert, Input, Button, Grid, Text, Container } from 'theme-ui'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
-import { Form, Formik } from 'formik'
+import { Form, Formik, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { DASHBOARD_PAGE_PATH, SIGN_UP_PAGE_PATH } from '../../config/paths'
 import { useAuth } from '../../providers/AuthProvider'
 import { FormGroup } from '../../components/FormGroup/FormGroup'
 import { BorderWrapper } from '../BorderWrapper/BorderWrapper'
 import icon from '../../media/images/unlocked.svg'
-import { ErrorMessageWrapper } from '../ErrorMessageWrapper/ErrorMessageWrapper'
 
 interface LoginFormValues {
   email: string
@@ -71,12 +70,10 @@ export const SignIn = (): JSX.Element => {
                 <Link to={SIGN_UP_PAGE_PATH}>
                   <Text
                     sx={{
-                      textAlign: 'center',
                       display: 'inline-block',
                       textDecoration: 'none',
                       fontSize: 1,
                       color: '#3F88F5',
-                      margin: '0 auto',
                     }}
                   >
                     Dont have an account? Please Sign up here.
@@ -85,9 +82,9 @@ export const SignIn = (): JSX.Element => {
               </Grid>
               <br />
               {formError && (
-                <Alert>
-                  <ErrorMessageWrapper message={formError} />
-                </Alert>
+                <ErrorMessage name="subject">
+                  {(msg) => <div style={{ color: 'red' }}>{msg}</div>}
+                </ErrorMessage>
               )}
             </Form>
           )}

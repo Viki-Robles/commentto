@@ -4,7 +4,7 @@ import { ThemeUIStyleObject, Grid, Text, Image } from 'theme-ui'
 
 export interface BorderWrapperProps {
   sx?: ThemeUIStyleObject
-  title: string
+  title?: string
   subheader?: string
   children: ReactNode
   icon?: string
@@ -27,11 +27,10 @@ export const BorderWrapper = ({
         backgroundColor: '#ffff',
         boxShadow:
           '0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04)',
-        maxWidth: '500px',
-        width: 'auto',
         margin: '0 auto',
-        mt: 7,
-        p: [2, 4],
+        width: 'fit-content',
+        p: '20px',
+        mt: 6,
         ...sx,
       }}
     >

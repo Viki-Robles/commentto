@@ -6,7 +6,7 @@ export interface FooterProps {
 }
 export const Footer = ({ sx }: FooterProps): JSX.Element => {
   return (
-    <Box sx={{ ...sx, textAlign: 'center', color: '#4B4A4A', mt: 6 }}>
+    <Box sx={{ ...sx, textAlign: 'center', color: '#4B4A4A', mt: 3 }}>
       Powered with ❤️ by Vicky Vasilopoulou
     </Box>
   )

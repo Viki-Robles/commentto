@@ -3,6 +3,6 @@ export interface CustomerReviewsDataModel {
 }
 
 export const customerReviewsData: CustomerReviewsDataModel[] = [
-  { stars: 5 },
+  { stars: 4 },
   { stars: 1 },
 ]

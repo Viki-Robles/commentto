@@ -18,9 +18,10 @@ export const CommentItem = ({
       sx={{
         border: '1px solid',
         borderRadius: 8,
-        borderColor: 'rgb(240, 243, 247)',
-        backgroundColor: '#ffff',
-        boxShadow: 'rgb(0 0 0 / 5%) 0px 1px 2px 0px',
+        borderColor: '#b9d4e2',
+        backgroundColor: '#f2f8fb',
+        boxShadow:
+          ' 0 20px 25px -5px rgb(0 0 0 / 10%), 0 10px 10px -5px rgb(0 0 0 / 4%)',
         p: 3,
         m: 2,
         ...sx,
@@ -29,11 +30,13 @@ export const CommentItem = ({
       <Flex sx={{ mb: 1 }}>
         <Image
           src={picture}
-          sx={{ mr: 2, width: '30px', height: '30px', borderRadius: 8 }}
+          sx={{ mr: 2, width: '50px', height: '50px', borderRadius: 8 }}
         />
-        <Text sx={{ fontWeight: 'bold', alignSelf: 'center' }}>{name}</Text>
+        <Box sx={{ display: 'grid' }}>
+          <Text sx={{ fontWeight: 'bold', alignSelf: 'center' }}>{name}</Text>
+          <Text sx={{ fontSize: 2 }}>{comment}</Text>
+        </Box>
       </Flex>
-      <Text sx={{ fontSize: 2 }}>{comment}</Text>
     </Box>
   )
 }

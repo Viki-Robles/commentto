@@ -38,10 +38,7 @@ export const Dashboard = ({ sx }: DashboardProps): JSX.Element => {
   const [visible, setVisible] = useState<boolean>(false)
 
   return (
-    <BorderWrapper
-      title="Product Review"
-      sx={{ width: 'auto', maxWidth: '60vw', mt: 5, ...sx }}
-    >
+    <BorderWrapper sx={{ width: 'auto', mt: 5, ...sx }}>
       <Grid columns={[1, null, null, '1fr 1fr']}>
         <Formik
           validateOnChange={false}
@@ -66,6 +63,16 @@ export const Dashboard = ({ sx }: DashboardProps): JSX.Element => {
                   </Text>
                 </Box>
                 <Box>
+                  <Text
+                    sx={{
+                      fontSize: 5,
+                      fontWeight: 'bold',
+                      color: '#4B4A4A',
+                      mt: 2,
+                    }}
+                  >
+                    Write a review
+                  </Text>
                   <StarRating />
                   <Form autoComplete="off" onSubmit={handleSubmit}>
                     <FormGroup label="Name" name="name" sx={{ mt: 4 }}>
