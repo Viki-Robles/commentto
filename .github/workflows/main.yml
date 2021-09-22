@@ -3,21 +3,26 @@ name: Build and deploy
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
 
+  # Run workflow manually
   workflow_dispatch:
+
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-      - uses: actions/checkout@master
+        uses: actions/checkout@master
       - name: Install dependencies
-        run: yarn ci
+        run: npm ci
       - name: Build dependencies
-        run: yarn run build
+        run: npm run build
+      - name: Archive production artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: dist
+          path: dist
   deploy:
     name: Deploy
     needs: build
@@ -25,6 +30,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@master
+      - name: Download artifact
+        uses: actions/download-artifact@master
         with:
           name: dist
           path: dist
