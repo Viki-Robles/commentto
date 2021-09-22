@@ -46,10 +46,6 @@ yarn new
 
 yarn new:page about
 
-#### create a new `isAllowed` util function
-
-yarn new:util isAllowed
-
 #### create a new `useToggle` React hook
 
 yarn new:hook useToggle
