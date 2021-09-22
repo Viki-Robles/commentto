@@ -2,9 +2,9 @@ name: Build and deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
   workflow_dispatch:
 jobs:
@@ -19,21 +19,18 @@ jobs:
       - name: Build dependencies
         run: yarn run build
   deploy:
-     name: Deploy
-     needs: build
-     runs-on: ubuntu-latest
-     steps:
-          - name: Checkout repository
-            uses: actions/checkout@master
-            with:
-              name: dist
-              path: dist
-          - name: Deploy to Firebase
-            uses: w9jds/firebase-action@master
-            with:
-              args: deploy --only hosting
-            env:
-              FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_COMMENTO_D85F3 }}
-            
-            
-   
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+        with:
+          name: dist
+          path: dist
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
