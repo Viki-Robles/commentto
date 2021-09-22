@@ -10,7 +10,7 @@ export const StarRating = ({ ...sx }: StarRatingProps): JSX.Element => {
   const [currentValue, setCurrentValue] = useState<number>(0)
   const stars = Array(5).fill(0)
 
-  const handleClick = (value: number) => {
+  const handleClickRating = (value: number) => {
     setCurrentValue(value)
   }
 
@@ -23,7 +23,7 @@ export const StarRating = ({ ...sx }: StarRatingProps): JSX.Element => {
             style={{ marginRight: 10 }}
             key={index}
             color={currentValue > index ? '#FFCD58' : '#a9a9a9'}
-            onClick={() => handleClick(index + 1)}
+            onClick={() => handleClickRating(index + 1)}
           />
         )
       })}

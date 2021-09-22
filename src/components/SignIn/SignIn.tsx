@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Alert, Input, Button, Grid, Text, Container } from 'theme-ui'
+import { Input, Button, Grid, Text, Container } from 'theme-ui'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import { Form, Formik, ErrorMessage } from 'formik'
@@ -10,12 +10,12 @@ import { FormGroup } from '../../components/FormGroup/FormGroup'
 import { BorderWrapper } from '../BorderWrapper/BorderWrapper'
 import icon from '../../media/images/unlocked.svg'
 
-interface LoginFormValues {
+interface SignInFormValues {
   email: string
   password: string
 }
 
-const LoginSchema = Yup.object().shape({
+const SignInSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string().required('Required').min(8).max(200),
 })
@@ -34,7 +34,7 @@ export const SignIn = (): JSX.Element => {
             email: '',
             password: '',
           }}
-          onSubmit={async (values: LoginFormValues) => {
+          onSubmit={async (values: SignInFormValues) => {
             setFormSubmitting(true)
             try {
               await signIn(values.email, values.password)
@@ -44,7 +44,7 @@ export const SignIn = (): JSX.Element => {
               setFormSubmitting(false)
             }
           }}
-          validationSchema={LoginSchema}
+          validationSchema={SignInSchema}
         >
           {({ getFieldProps }) => (
             <Form>

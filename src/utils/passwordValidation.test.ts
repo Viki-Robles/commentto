@@ -12,7 +12,7 @@ const passwordTest = (password: string, pass: boolean): void => {
     .then((valid) => {
       if (valid !== pass) {
         console.log(
-          `🚀 ~ passwordTest debugger`,
+          `passwordTest debugger`,
           `password: "${password}"`,
           `isValid: ${valid}`,
           `pass: ${pass}`,

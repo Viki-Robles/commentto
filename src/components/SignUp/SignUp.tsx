@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom'
 import icon from '../../media/images/lock.svg'
 import { ErrorMessageWrapper } from '../ErrorMessageWrapper/ErrorMessageWrapper'
 
-interface FinishSignupFormValues {
+interface SignupFormValues {
   email: string
   password: string
   repeatPassword: string
@@ -36,11 +36,11 @@ const SignUpSchema = Yup.object().shape({
   }),
 })
 
-export interface FinishSignupFormProps {
+export interface SignupProps {
   sx?: ThemeUIStyleObject
 }
 
-export const SignUp = ({ sx }: FinishSignupFormProps): JSX.Element => {
+export const SignUp = ({ sx }: SignupProps): JSX.Element => {
   const { signUp } = useAuth()
   const [formError, setFormError] = useState<string>('')
   const [formSubmitting, setFormSubmitting] = useState<boolean>(false)
@@ -55,7 +55,7 @@ export const SignUp = ({ sx }: FinishSignupFormProps): JSX.Element => {
             password: '',
             repeatPassword: '',
           }}
-          onSubmit={async (values: FinishSignupFormValues) => {
+          onSubmit={async (values: SignupFormValues) => {
             setFormSubmitting(true)
             try {
               const result = await signUp(values.email, values.password)
