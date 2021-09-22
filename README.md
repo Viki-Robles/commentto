@@ -38,8 +38,6 @@ Open http://localhost:3000 with your browser to see the result.
 It is highly recommended that you use the commands below when you need to create a new component, hook, or util function.
 These commands will create new files in the correct locations following the project's guidelines.
 
-#### catch-all, will present options for the user to choose what type of component to create
-
 yarn new
 
 #### create a new `About` page component
