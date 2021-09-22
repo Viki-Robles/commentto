@@ -37,7 +37,7 @@
   },
   "scripts": {
     "dev": "react-scripts start",
-    "build": "react-scripts build",
+    "deploy": "yarn run build && firebase deploy",
     "test": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .ts",
