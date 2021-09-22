@@ -38,7 +38,7 @@ export const Dashboard = ({ sx }: DashboardProps): JSX.Element => {
   const [visible, setVisible] = useState<boolean>(false)
 
   return (
-    <BorderWrapper sx={{ width: 'auto', mt: 5, ...sx }}>
+    <BorderWrapper sx={{ maxWidth: '80%', mt: 5, ...sx }}>
       <Grid columns={[1, null, null, '1fr 1fr']}>
         <Formik
           validateOnChange={false}
@@ -57,10 +57,7 @@ export const Dashboard = ({ sx }: DashboardProps): JSX.Element => {
             return (
               <Fragment>
                 <Box>
-                  <Image src={productPicture} sx={{ width: '100%' }} />
-                  <Text sx={{ fontWeight: '400', fontSize: 1, ml: 2 }}>
-                    Alpine High Boot Socks.
-                  </Text>
+                  <Image src={productPicture} sx={{ maxWidth: '80%' }} />
                 </Box>
                 <Box>
                   <Text
