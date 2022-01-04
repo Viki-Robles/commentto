@@ -6,6 +6,8 @@
   </p>
 </div>
 
+<img width="1657" alt="Screenshot 2022-01-04 at 16 08 34" src="https://user-images.githubusercontent.com/59574576/148071237-06fc0f86-f6e6-4258-9517-80043f73c150.png">
+
 # Getting Started
 
 First, install dependencies (preferably using Yarn 1.x), then run the development server:
