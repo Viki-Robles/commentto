@@ -10,6 +10,9 @@
 
 # Getting Started
 
+### If you want to use Firebase with this project you have to create a project on firebase console. 
+- Then create a ``.env`` file on the root of this app and add the keys that firebase gives you such as ``REACT_APP_FIREBASE_API_KEY="APIFPFGIEGIRIVGRVJR"``.
+
 First, install dependencies (preferably using Yarn 1.x), then run the development server:
 
 `yarn dev or npm run dev`
@@ -49,3 +52,4 @@ yarn new:page about
 #### create a new `useToggle` React hook
 
 yarn new:hook useToggle
+
