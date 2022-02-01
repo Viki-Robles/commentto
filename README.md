@@ -10,6 +10,8 @@
 
 # Getting Started
 
+### This is a firebase authentication in React with a sign up and login form.
+
 ### If you want to use Firebase with this project you have to create a project on firebase console. 
 - Then create a ``.env`` file on the root of this app and add the keys that firebase gives you such as ``REACT_APP_FIREBASE_API_KEY="APIFPFGIEGIRIVGRVJR"``.
 
